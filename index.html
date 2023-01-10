@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Form</title>
+    <style>
+      #review-form {
+        width: 500px;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+
+      #review-form label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      #review-form input[type="text"],
+      #review-form textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      #review-form input[type="number"] {
+        width: 60px;
+      }
+
+      #review-form input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      #review-form input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+    <script src="jspart.js"></script>
+  </head>
+  <body>
+    <form id="review-form" method="POST" action="http://localhost:3000/submit">
+      <!-- action atribte : needs some url to submit the form  -->
+      <!--
+         <label for='name'>Name</label>
+<input type='text' name='name' id='name' /> 
+-->
+      <!-- 
+  Can you share why we changed the label part in HTML file?
+  to connect with right input tag, in level we have a 'for' attribute it belongs to the 'input id'
+ -->
+      <label for="name"> Name: </label>
+      <input type="text" name="name" id="name" required />
+      <br />
+      <label for="review"> Review: </label>
+      <textarea name="review" id="review" required></textarea>
+      <br />
+      <label for="rating"> Rating: </label>
+      <input type="number" name="rating" min="1" max="5" id="rating" required />
+      <br />
+      <br />
+      <input type="submit" value="Submit Review" />
+    </form>
+  </body>
+</html>
